@@ -31,9 +31,12 @@
 
 <body class="antialiased">
 
+  <!-- Navbar -->
+
   <header class="fixed left-0 right-0 z-50 flex justify-center px-3"
     style="top:calc(env(safe-area-inset-top, 0px) + .75rem)">
-    <div class="pill relative w-full max-w-3xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
+    <div
+      class="pill relative w-full max-w-3xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
       <a href="#home" class="logo" aria-label="Home">
         <span class="text-black font-bold">YG</span>
       </a>
@@ -42,7 +45,7 @@
         <a class="navlink" href="#about">About</a>
         <a class="navlink" href="#skills">Skills</a>
         <a class="navlink" href="#education">Education</a>
-        <a class="navlink" href="#work">Projects</a>
+        <a class="navlink" href="#projects">Projects</a>
         <a class="navlink" href="#contact">Contact</a>
       </nav>
       <div class="flex items-center gap-1 ml-auto md:ml-0">
@@ -63,8 +66,10 @@
 
 
 
-  <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-  
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+
+    <!-- Home Section -->
+
     <section id="home" class="hero justify-center text-center">
       <!-- <p class="chip inline-block mb-6">Naye projects ke liye available</p> -->
       <h1 class="font-display font-extrabold text-5xl sm:text-7xl leading-[1.05] cursor-default"><span>Hello,</span>
@@ -72,13 +77,16 @@
         <span>Yash</span><br> <span> A Web</span> <span>Developer</span>
       </h1>
       <div class="mt-8 flex flex-wrap gap-3 justify-center text-center">
-        <p class="muted text-lg leading-relaxed cursor-default ">A Web Developer specializing in HTML, CSS, JavaScript, and
+        <p class="muted text-lg leading-relaxed cursor-default ">A Web Developer specializing in HTML, CSS, JavaScript,
+          and
           React, creating fast, responsive, and mobile-friendly websites with clean design and smooth user experiences.
         </p>
         <a href="#work" class="btn btn-main">Projects</a>
         <a href="#contact" class="btn btn-line">Contact</a>
       </div>
     </section>
+
+    <!-- About Section -->
 
     <section id="about" class="pb-20 px-4 sm:px-6 md:px-8 cursor-default">
 
@@ -95,7 +103,7 @@
 
         <!-- Profile Image -->
         <div class="skill rounded-2xl overflow-hidden lg:col-span-2 min-h-[350px] sm:min-h-[450px]">
-          <img src="images/personal.jpeg" alt="Yash - Web Developer" class="w-full h-full object-cover">
+          <img src="images/myimage.png" alt="Yash - Web Developer" class="w-full h-full object-cover">
         </div>
 
         <!-- About Content -->
@@ -155,6 +163,8 @@
 
     </section>
 
+    <!-- Skills Section -->
+
     <section id="skills" class="py-20">
       <div class="max-w-6xl mx-auto px-5 cursor-default">
 
@@ -179,7 +189,7 @@
                 HTML
               </h3>
               <p class="muted text-sm mt-0.5">
-                Saaf aur sahi structure wale web pages.
+                Builds clean, well-structured web pages using semantic markup.
               </p>
             </div>
           </div>
@@ -223,7 +233,7 @@
                 JavaScript
               </h3>
               <p class="muted text-sm mt-0.5">
-                Website ko interactive banana, jaise filters aur forms.
+                Adds interactivity to websites, such as filters, forms and dynamic content.
               </p>
             </div>
           </div>
@@ -247,7 +257,7 @@
                 React
               </h3>
               <p class="muted text-sm mt-0.5">
-                Components se reusable aur fast apps.
+                Builds fast, scalable apps using reusable components.
               </p>
             </div>
           </div>
@@ -273,7 +283,7 @@
                 GitHub
               </h3>
               <p class="muted text-sm mt-0.5">
-                Version control aur code ko organized rakhna.
+                Manages code with version control and keeps projects organized.
               </p>
             </div>
           </div>
@@ -304,7 +314,7 @@
                 Canva
               </h3>
               <p class="muted text-sm mt-0.5">
-                Logo, banner aur social media designs.
+                Designs logos, banners and social media graphics quickly.
               </p>
             </div>
           </div>
@@ -328,8 +338,185 @@
                 MySQL
               </h3>
               <p class="muted text-sm mt-0.5">
-                Database banana aur data ko manage karna.
+                Creates and manages databases to store and retrieve data efficiently.
               </p>
+            </div>
+          </div>
+
+
+          <!-- Wordpress -->
+           <div class="skill card p-5 flex items-center gap-4">
+            <div class="tile" aria-hidden="true">
+                 <img src="https://cdn.simpleicons.org/wordpress" width="40" alt="WordPress">
+            </div>
+
+            <div>
+              <h3 class="font-display font-extrabold text-lg">
+                Wordpress
+              </h3>
+              <p class="muted text-sm mt-0.5">
+                Builds and customizes websites and blogs using themes and plugins.
+              </p>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+      <div class="max-w-6xl mx-auto px-5 cursor-default">
+
+        <h2 class="font-display text-3xl font-extrabold mb-8">
+          Education
+        </h2>
+        <!-- 3 Education Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <!-- BCA Card -->
+          <div
+            class="skill card p-6 sm:p-7 md:col-span-2 border rounded-2xl transition duration-300 hover:-translate-y-1 mb-6">
+
+            <div class="flex flex-col sm:flex-row gap-5">
+
+              <!-- Icon -->
+              <div class="tile shrink-0 flex items-center justify-center
+                      w-16 h-16 rounded-2xl bg-violet-500/20
+                      text-violet-500">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-8 h-8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m2 9 10-6 10 6-10 6L2 9Z" />
+                  <path d="M6 11.5v5c4 3 8 3 12 0v-5" />
+                  <path d="M22 9v6" />
+                </svg>
+              </div>
+
+              <!-- Details -->
+              <div class="flex-1 min-w-0">
+                <span class="muted inline-block text-xs
+                         rounded-full border border-current/15
+                         px-3 py-1 mb-3">
+                  Currently Pursuing
+                </span>
+
+                <h3 class="font-display text-xl font-extrabold">
+                  Bachelor of Computer Applications
+                </h3>
+
+                <p class="muted mt-2">
+                  Star Infotech College, Ajmer
+                </p>
+
+                <p class="muted text-sm mt-3 leading-6">
+                  Learning programming, web development, database
+                  management and modern technologies to build my career in IT.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="muted text-xs rounded-full
+                           border border-current/15 px-3 py-2">
+                    Programming
+                  </span>
+                  <span class="muted text-xs rounded-full
+                           border border-current/15 px-3 py-2">
+                    Web Development
+                  </span>
+                  <span class="muted text-xs rounded-full
+                           border border-current/15 px-3 py-2">
+                    Database
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12th Card -->
+          <div class="skill card p-6 rounded-2xl
+                  transition duration-300 hover:-translate-y-1">
+
+            <div class="flex items-start gap-4">
+
+              <div class="tile shrink-0 flex items-center justify-center
+                      w-14 h-14 rounded-xl bg-violet-500/20
+                      text-violet-500">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z" />
+                  <path d="M8 8h8M8 12h8M8 16h5" />
+                </svg>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <span class="muted inline-block text-xs
+                         rounded-full border border-current/15
+                         px-3 py-1 mb-3">
+                  Senior Secondary
+                </span>
+
+                <h3 class="font-display text-xl font-extrabold">
+                  Class 12th
+                </h3>
+
+                <p class="muted mt-2 text-sm">
+                  Govt Patel Sr. Sec School,Beawar
+                </p>
+
+                <p class="muted text-sm mt-3">
+                  Board: RBSE
+                </p>
+
+                <p class="muted text-sm mt-1">
+                  Passing Year: 2022
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 10th Card -->
+          <div class="skill card p-6 rounded-2xl
+                  transition duration-300 hover:-translate-y-1">
+
+            <div class="flex items-start gap-4">
+
+              <div class="tile shrink-0 flex items-center justify-center
+                      w-14 h-14 rounded-xl bg-violet-500/20
+                      text-violet-500">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4
+                       1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6
+                       l6.2-.9L12 3Z" />
+                </svg>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <span class="muted inline-block text-xs
+                         rounded-full border border-current/15
+                         px-3 py-1 mb-3">
+                  Secondary Education
+                </span>
+
+                <h3 class="font-display text-xl font-extrabold">
+                  Class 10th
+                </h3>
+
+                <p class="muted mt-2 text-sm">
+                  Govt Patel Sr. Sec School Beawar
+                </p>
+
+                <p class="muted text-sm mt-3">
+                  Board: RBSE
+                </p>
+
+                <p class="muted text-sm mt-1">
+                  Passing Year: 2020
+                </p>
+              </div>
+
             </div>
           </div>
 
@@ -337,172 +524,9 @@
       </div>
     </section>
 
-<!-- Education Section -->
-<section id="education" class="py-20">
-  <div class="max-w-6xl mx-auto px-5 cursor-default">
-
-    <h2 class="font-display text-3xl font-extrabold mb-8">
-        Education
-    </h2>
-    <!-- 3 Education Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-      <!-- BCA Card -->
-      <div class="skill card p-6 sm:p-7 md:col-span-2 border rounded-2xl transition duration-300 hover:-translate-y-1 mb-6">
-
-        <div class="flex flex-col sm:flex-row gap-5">
-
-          <!-- Icon -->
-          <div class="tile shrink-0 flex items-center justify-center
-                      w-16 h-16 rounded-2xl bg-violet-500/20
-                      text-violet-500">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.8"
-                 class="w-8 h-8"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="m2 9 10-6 10 6-10 6L2 9Z"/>
-              <path d="M6 11.5v5c4 3 8 3 12 0v-5"/>
-              <path d="M22 9v6"/>
-            </svg>
-          </div>
-
-          <!-- Details -->
-          <div class="flex-1 min-w-0">
-            <span class="muted inline-block text-xs
-                         rounded-full border border-current/15
-                         px-3 py-1 mb-3">
-              Currently Pursuing
-            </span>
-
-            <h3 class="font-display text-xl font-extrabold">
-              Bachelor of Computer Applications
-            </h3>
-
-            <p class="muted mt-2">
-              Star Infotech College, Ajmer
-            </p>
-
-            <p class="muted text-sm mt-3 leading-6">
-              Learning programming, web development, database
-              management and modern technologies to build my career in IT.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="muted text-xs rounded-full
-                           border border-current/15 px-3 py-2">
-                Programming
-              </span>
-              <span class="muted text-xs rounded-full
-                           border border-current/15 px-3 py-2">
-                Web Development
-              </span>
-              <span class="muted text-xs rounded-full
-                           border border-current/15 px-3 py-2">
-                Database
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12th Card -->
-      <div class="skill card p-6 rounded-2xl
-                  transition duration-300 hover:-translate-y-1">
-
-        <div class="flex items-start gap-4">
-
-          <div class="tile shrink-0 flex items-center justify-center
-                      w-14 h-14 rounded-xl bg-violet-500/20
-                      text-violet-500">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.8"
-                 class="w-7 h-7"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/>
-              <path d="M8 8h8M8 12h8M8 16h5"/>
-            </svg>
-          </div>
-
-          <div class="flex-1 min-w-0">
-            <span class="muted inline-block text-xs
-                         rounded-full border border-current/15
-                         px-3 py-1 mb-3">
-              Senior Secondary
-            </span>
-
-            <h3 class="font-display text-xl font-extrabold">
-              Class 12th
-            </h3>
-
-            <p class="muted mt-2 text-sm">
-              Govt Patel Sr. Sec School,Beawar
-            </p>
-
-            <p class="muted text-sm mt-3">
-              Board: RBSE
-            </p>
-
-            <p class="muted text-sm mt-1">
-              Passing Year: 2022
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- 10th Card -->
-      <div class="skill card p-6 rounded-2xl
-                  transition duration-300 hover:-translate-y-1">
-
-        <div class="flex items-start gap-4">
-
-          <div class="tile shrink-0 flex items-center justify-center
-                      w-14 h-14 rounded-xl bg-violet-500/20
-                      text-violet-500">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.8"
-                 class="w-7 h-7"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4
-                       1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6
-                       l6.2-.9L12 3Z"/>
-            </svg>
-          </div>
-
-          <div class="flex-1 min-w-0">
-            <span class="muted inline-block text-xs
-                         rounded-full border border-current/15
-                         px-3 py-1 mb-3">
-              Secondary Education
-            </span>
-
-            <h3 class="font-display text-xl font-extrabold">
-              Class 10th
-            </h3>
-
-            <p class="muted mt-2 text-sm">
-              Govt Patel Sr. Sec School Beawar
-            </p>
-
-            <p class="muted text-sm mt-3">
-              Board: RBSE
-            </p>
-
-            <p class="muted text-sm mt-1">
-              Passing Year: 2020
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
     <!-- Projects Section -->
 
-    <section id="work" class="pb-20">
+    <section id="projects" class="pb-20">
 
       <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <h2 class="font-display font-extrabold text-3xl">Projects</h2>
@@ -616,12 +640,12 @@
 
     <!-- Contact Page -->
 
-    <section id="contact" class="py-16 sm:py-20 lg:py-24">
+    <section id="contact" class="py-16 sm:py-20 ">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 cursor-default">
 
           <!-- LEFT : CONTACT INFO -->
-          <div class="lg:col-span-2 flex flex-col justify-between">
+          <div class="lg:col-span-2 flex flex-col justify-center">
             <!-- Contact Info -->
             <div>
               <p class="text-xs font-semibold tracking-[0.18em] uppercase mb-7">
@@ -681,9 +705,10 @@
 
           <!-- RIGHT : FORM -->
           <div class="lg:col-span-3">
-            <form action="https://api.web3forms.com/submit" method="POST" class="rounded-3xl p-5 sm:p-7 md:p-8 lg:p-9" style="background:var(--soft)">
+            <form action="https://api.web3forms.com/submit" method="POST" class="rounded-3xl p-5 sm:p-7 md:p-8 lg:p-9"
+              style="background:var(--soft)">
 
-              <!-- Heading -->  
+              <!-- Heading -->
               <div class="flex items-start justify-between gap-4 mb-7">
                 <h2 class="font-display font-extrabold
                      text-3xl sm:text-4xl
@@ -888,12 +913,7 @@
         </div>
       </div>
     </footer>
-
-
-
-  </main>
-
-
+  </div>
 </body>
 
 </html>
