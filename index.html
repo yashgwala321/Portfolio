@@ -33,8 +33,7 @@
 
   <!-- Navbar -->
 
-  <header class="fixed left-0 right-0 z-50 flex justify-center px-3"
-    style="top:calc(env(safe-area-inset-top, 0px) + .75rem)">
+  <header class="fixed left-0 right-0 z-50 flex justify-center px-3 mt-4">
     <div
       class="pill relative w-full max-w-3xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
       <a href="#home" class="logo" aria-label="Home">
@@ -52,7 +51,15 @@
         <button id="theme" type="button" class="pbtn font-bold">
           <a href="images/Resume With 10+12th Education.pdf" target="_blank">Resume</a>
         </button>
-        <button id="menu" type="button" class="pbtn md:hidden" aria-expanded="false" aria-controls="nav">Menu</button>
+        <!-- Menu Button icon -->
+        <button id="menu" type="button" class="pbtn md:hidden" aria-expanded="false" aria-controls="nav">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
         <a href="mailto:yashgwala4@gmail.com" class="mailpill hidden sm:inline-flex"><svg
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-6">
@@ -345,9 +352,9 @@
 
 
           <!-- Wordpress -->
-           <div class="skill card p-5 flex items-center gap-4">
+          <div class="skill card p-5 flex items-center gap-4">
             <div class="tile" aria-hidden="true">
-                 <img src="https://cdn.simpleicons.org/wordpress" width="40" alt="WordPress">
+              <img src="https://cdn.simpleicons.org/wordpress" width="40" alt="WordPress">
             </div>
 
             <div>
