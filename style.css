@@ -1,28 +1,88 @@
+/* ============================================================
+   THEME: Navy #082052 + Cream  (improved visibility + hover effects)
+   Colors badalne ho to sirf neeche ke variables change karo
+   ============================================================ */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  --bg: #0f0c1d;
-  --side: #151129;
-  --card: #181332;
-  --ink: #efecff;
-  --muted: #a39fc8;
-  --line: #2b2550;
-  --accent: #a58bff;
-  --accent-ink: #0f0c1d;
-  --soft: #221b45;
+
+  --navy: #082052;
+  --cream: #f8f0e5;
+
+  --bg: #f3e9d9; /* page background - thoda gehra cream, taaki cards alag dikhein */
+  --side: #ebdfcb;
+  --card: #fffdf8; /* cards - almost white, bg se saaf alag */
+  --ink: #061a45; /* text - gehra navy (zyada contrast) */
+  --muted: #41527a; /* secondary text */
+  --line: #cfc1a8; /* borders - ab saaf dikhte hain */
+  --accent: #082052; /* main color - navy */
+  --accent-dark: #051638; /* hover */
+  --accent-ink: #f8f0e5; /* text on navy */
+  --pop: #2f5bba; /* bright blue highlight */
+  --pop-light: #7da0ec; /* lighter blue for gradients */
+  --soft: #e9dcc5; /* icon boxes, form bg */
   --border: var(--line);
   --text: var(--ink);
 }
+
 html {
   scroll-padding-top: 6rem;
   scroll-behavior: smooth;
 }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(
+      900px 500px at 85% -5%,
+      rgba(47, 91, 186, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at -5% 40%,
+      rgba(8, 32, 82, 0.07),
+      transparent 60%
+    ),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: "DM Sans", system-ui, sans-serif;
 }
+::selection {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+/* Section headings + underline (hover par underline lambi hoti hai) */
+#about h2,
+#skills h2,
+#education h2,
+#projects h2 {
+  color: var(--ink);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+#about h2::after,
+#skills h2::after,
+#education h2::after,
+#projects h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.5rem;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pop), var(--pop-light));
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+#about h2:hover::after,
+#skills h2:hover::after,
+#education h2:hover::after,
+#projects h2:hover::after {
+  width: 100%;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -30,8 +90,15 @@ body {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 1.25rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 10px 26px -14px rgba(8, 32, 82, 0.4);
 }
+
+/* Buttons: hover par light ki "shine" guzarti hai */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
@@ -39,23 +106,55 @@ body {
   transition:
     transform 0.2s,
     box-shadow 0.2s,
-    background 0.2s;
+    background 0.2s,
+    color 0.2s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.btn:hover::after {
+  left: 130%;
 }
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px -8px var(--accent);
+  box-shadow: 0 12px 26px -8px rgba(8, 32, 82, 0.55);
+}
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
 }
 .btn-main {
   background: var(--accent);
   color: var(--accent-ink);
 }
+.btn-main:hover {
+  background: var(--pop);
+  color: #fff;
+}
 .btn-line {
-  border: 1px solid var(--line);
-  background: var(--card);
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
 }
 .btn-line:hover {
-  background: var(--soft);
+  background: var(--accent);
+  color: var(--accent-ink);
 }
+
+/* Chips */
 .chip {
   border: 1px solid var(--line);
   background: var(--card);
@@ -65,12 +164,19 @@ body {
   transition:
     transform 0.2s,
     border-color 0.2s,
-    background 0.2s;
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
 }
 .chip:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.04);
   border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 8px 16px -8px rgba(8, 32, 82, 0.6);
 }
+
+/* Skill icon tiles */
 .tile {
   width: 3.25rem;
   height: 3.25rem;
@@ -78,28 +184,40 @@ body {
   background: var(--soft);
   display: grid;
   place-items: center;
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1),
+    background 0.3s;
 }
 .tile svg {
   width: 1.9rem;
   height: 1.9rem;
 }
 .skill:hover .tile {
-  transform: rotate(-8deg) scale(1.12);
+  transform: rotate(-8deg) scale(1.15);
+  background: rgba(47, 91, 186, 0.18);
 }
+
+/* Project + skill cards: lift + upar neeli patti + glow */
 .project,
 .skill {
   transition:
-    transform 0.25s,
-    border-color 0.25s,
-    box-shadow 0.25s;
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
 }
 .project:hover,
 .skill:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 16px 30px -14px var(--accent);
+  transform: translateY(-7px);
+  border-color: var(--pop);
+  background: #ffffff;
+  box-shadow:
+    inset 0 4px 0 var(--pop),
+    0 22px 38px -16px rgba(8, 32, 82, 0.55),
+    0 0 0 4px rgba(47, 91, 186, 0.12);
 }
+
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -107,41 +225,63 @@ body {
   justify-content: center;
   padding: 112px 0 64px;
 }
+.hero h1 {
+  color: var(--ink);
+}
 .hero h1 span {
   display: inline-block;
-  transition: transform 0.25s;
+  transition:
+    transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1),
+    color 0.25s;
 }
 .hero h1 span:hover {
-  transform: translateY(-6px) rotate(-2deg);
-}
-main a.underline {
-  transition: color 0.2s;
-}
-main a.underline:hover {
-  color: var(--accent);
+  transform: translateY(-8px) rotate(-3deg);
+  color: var(--pop);
 }
 
-/* floating pill navbar */
-.pill {
-  background: #1e1e1e;
-  color: #fff;
+/* Links: underline smoothly gaadhi hoti hai */
+main a.underline {
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(8, 32, 82, 0.3);
+  transition:
+    color 0.2s,
+    text-decoration-color 0.2s,
+    text-underline-offset 0.2s;
+}
+main a.underline:hover {
+  color: var(--pop);
+  text-decoration-color: var(--pop);
+  text-underline-offset: 7px;
+}
+
+/* ---------- floating pill navbar: transparent + blur (UNCHANGED) ---------- */
+.pill,
+header .pill {
+  background: rgba(248, 240, 229, 0.45) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  color: var(--ink);
   border-radius: 999px;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px -14px rgba(8, 32, 82, 0.45);
+  border: 1px solid rgba(8, 32, 82, 0.25) !important;
 }
 .logo {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: #fff;
+  background: var(--navy);
   display: grid;
   place-items: center;
   flex: none;
   transition: transform 0.4s;
+}
+.logo span {
+  color: var(--cream) !important;
 }
 .logo:hover {
   transform: rotate(-25deg) scale(1.08);
@@ -156,10 +296,13 @@ main a.underline:hover {
   left: 0;
   right: 0;
   flex-direction: column;
-  background: #1e1e1e;
+  background: rgba(248, 240, 229, 0.8);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(8, 32, 82, 0.25);
   border-radius: 1.5rem;
   padding: 0.5rem;
-  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 12px 32px -14px rgba(8, 32, 82, 0.45);
 }
 @media (min-width: 768px) {
   #nav,
@@ -168,6 +311,9 @@ main a.underline:hover {
     position: static;
     flex-direction: row;
     background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border: 0;
     padding: 0;
     box-shadow: none;
     margin: 0 auto;
@@ -178,7 +324,7 @@ main a.underline:hover {
   display: block;
   padding: 0.6rem 1rem;
   border-radius: 999px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
   font-weight: 500;
   transition:
     background 0.2s,
@@ -186,36 +332,38 @@ main a.underline:hover {
     transform 0.2s;
 }
 .navlink:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  background: rgba(8, 32, 82, 0.1);
+  color: var(--accent-dark);
   transform: translateY(-1px);
 }
 .navlink.active {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--navy);
+  color: var(--cream);
 }
 .pbtn {
   height: 2.75rem;
   min-width: 2.75rem;
   padding: 0 15px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
   font-size: 0.9rem;
   transition:
     background 0.2s,
+    color 0.2s,
     transform 0.2s;
 }
 .pbtn:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: var(--navy);
+  color: var(--cream);
   transform: translateY(-1px);
 }
 .mailpill {
   height: 2.75rem;
   padding: 0 1.25rem;
   border-radius: 999px;
-  background: #fff;
-  color: #1e1e1e;
+  background: var(--navy);
+  color: var(--cream);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -226,14 +374,66 @@ main a.underline:hover {
   white-space: nowrap;
 }
 .mailpill:hover {
-  background: var(--accent);
+  background: var(--pop);
   color: #fff;
   transform: scale(1.04);
 }
 
+/* ---------- HTML me hardcoded colors ke fixes ---------- */
+
+/* contact + footer icons (pehle white the) */
+svg path[fill="rgb(255, 255, 255)"] {
+  fill: var(--accent);
+}
+.border-white\/10 {
+  border-color: var(--line) !important;
+}
+footer a[aria-label] {
+  transition:
+    background 0.2s,
+    transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1),
+    box-shadow 0.2s;
+}
+footer a[aria-label]:hover {
+  background: var(--soft);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 18px -10px rgba(8, 32, 82, 0.6);
+}
+
+/* education icons (pehle violet the) */
+.text-violet-500 {
+  color: var(--accent) !important;
+}
+.bg-violet-500\/20 {
+  background: rgba(8, 32, 82, 0.1) !important;
+}
+
+/* contact form */
+form input,
+form textarea {
+  background: #fff !important;
+  color: var(--ink) !important;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+form input:focus,
+form textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px rgba(47, 91, 186, 0.2);
+}
+form button[type="submit"]:hover {
+  background: var(--pop) !important;
+}
+
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--pop);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -244,6 +444,9 @@ button:focus-visible {
   }
   * {
     transition: none !important;
+  }
+  .btn::after {
+    display: none;
   }
   .project:hover,
   .skill:hover,
